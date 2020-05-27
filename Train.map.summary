@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Tue Apr 03 13:42:33 2018
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : Train
+Top-level Entity Name : train
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 401
+    Dedicated logic registers : 242
+Total registers : 242
+Total pins : 26
+Total virtual pins : 0
+Total block memory bits : 4,096
+DSP block 9-bit elements : 0
+Total PLLs : 1
+Total DLLs : 0

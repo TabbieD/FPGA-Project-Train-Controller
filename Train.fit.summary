@@ -1,0 +1,17 @@
+Fitter Status : Successful - Tue Apr 03 13:42:39 2018
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : Train
+Top-level Entity Name : train
+Family : Stratix II
+Device : EP2S15F484C3
+Timing Models : Final
+Logic utilization : 4 %
+    Combinational ALUTs : 403 / 12,480 ( 3 % )
+    Dedicated logic registers : 242 / 12,480 ( 2 % )
+Total registers : 242
+Total pins : 26 / 343 ( 8 % )
+Total virtual pins : 0
+Total block memory bits : 4,096 / 419,328 ( < 1 % )
+DSP block 9-bit elements : 0 / 96 ( 0 % )
+Total PLLs : 1 / 6 ( 17 % )
+Total DLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,219 @@
+|Train
+PBSWITCH_7 => PBSWITCH_7_sync.DATAIN
+SW8 => reset.DATAIN
+Clock_50Mhz => video_PLL:video_PLL_inst.inclk0
+VGA_Red <= VGA_Red.DB_MAX_OUTPUT_PORT_TYPE
+VGA_Green <= VGA_Green.DB_MAX_OUTPUT_PORT_TYPE
+VGA_Blue <= VGA_Blue.DB_MAX_OUTPUT_PORT_TYPE
+VGA_HSync <= VGA_HSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_VSync <= VGA_VSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Video_blank_out <= video_on.DB_MAX_OUTPUT_PORT_TYPE
+Video_clock_out <= video_PLL:video_PLL_inst.c0
+DIPSwitch_1 => switch_sync[7].DATAIN
+DIPSwitch_2 => switch_sync[6].DATAIN
+DIPSwitch_3 => switch_sync[3].DATAIN
+DIPSwitch_4 => switch_sync[2].DATAIN
+LCD_RS <= LCD_RS~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_E <= LCD_E~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_RW <= LCD_RW_INT.DB_MAX_OUTPUT_PORT_TYPE
+LCD_ON <= <VCC>
+DATA_BUS[0] <> DATA_BUS[0]
+DATA_BUS[1] <> DATA_BUS[1]
+DATA_BUS[2] <> DATA_BUS[2]
+DATA_BUS[3] <> DATA_BUS[3]
+DATA_BUS[4] <> DATA_BUS[4]
+DATA_BUS[5] <> DATA_BUS[5]
+DATA_BUS[6] <> DATA_BUS[6]
+DATA_BUS[7] <> DATA_BUS[7]
+
+
+|Train|video_PLL:video_PLL_inst
+inclk0 => altpll:altpll_component.inclk[0]
+c0 <= altpll:altpll_component.clk[0]
+
+
+|Train|video_PLL:video_PLL_inst|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= <GND>
+clk[2] <= <GND>
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|Train|LPM_ROM:back_rom
+address[0] => altrom:srom.address[0]
+address[1] => altrom:srom.address[1]
+address[2] => altrom:srom.address[2]
+address[3] => altrom:srom.address[3]
+address[4] => altrom:srom.address[4]
+address[5] => altrom:srom.address[5]
+address[6] => altrom:srom.address[6]
+address[7] => altrom:srom.address[7]
+address[8] => altrom:srom.address[8]
+address[9] => altrom:srom.address[9]
+address[10] => altrom:srom.address[10]
+address[11] => altrom:srom.address[11]
+inclock => altrom:srom.clocki
+outclock => ~NO_FANOUT~
+memenab => otri[0].OE
+q[0] <= otri[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Train|LPM_ROM:back_rom|altrom:srom
+address[0] => altsyncram:rom_block.address_a[0]
+address[1] => altsyncram:rom_block.address_a[1]
+address[2] => altsyncram:rom_block.address_a[2]
+address[3] => altsyncram:rom_block.address_a[3]
+address[4] => altsyncram:rom_block.address_a[4]
+address[5] => altsyncram:rom_block.address_a[5]
+address[6] => altsyncram:rom_block.address_a[6]
+address[7] => altsyncram:rom_block.address_a[7]
+address[8] => altsyncram:rom_block.address_a[8]
+address[9] => altsyncram:rom_block.address_a[9]
+address[10] => altsyncram:rom_block.address_a[10]
+address[11] => altsyncram:rom_block.address_a[11]
+clocki => altsyncram:rom_block.clock0
+clocko => ~NO_FANOUT~
+q[0] <= altsyncram:rom_block.q_a[0]
+
+
+|Train|LPM_ROM:back_rom|altrom:srom|altsyncram:rom_block
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_o401:auto_generated.address_a[0]
+address_a[1] => altsyncram_o401:auto_generated.address_a[1]
+address_a[2] => altsyncram_o401:auto_generated.address_a[2]
+address_a[3] => altsyncram_o401:auto_generated.address_a[3]
+address_a[4] => altsyncram_o401:auto_generated.address_a[4]
+address_a[5] => altsyncram_o401:auto_generated.address_a[5]
+address_a[6] => altsyncram_o401:auto_generated.address_a[6]
+address_a[7] => altsyncram_o401:auto_generated.address_a[7]
+address_a[8] => altsyncram_o401:auto_generated.address_a[8]
+address_a[9] => altsyncram_o401:auto_generated.address_a[9]
+address_a[10] => altsyncram_o401:auto_generated.address_a[10]
+address_a[11] => altsyncram_o401:auto_generated.address_a[11]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_o401:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_o401:auto_generated.q_a[0]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|Train|LPM_ROM:back_rom|altrom:srom|altsyncram:rom_block|altsyncram_o401:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[8] => ram_block1a0.PORTAADDR8
+address_a[9] => ram_block1a0.PORTAADDR9
+address_a[10] => ram_block1a0.PORTAADDR10
+address_a[11] => ram_block1a0.PORTAADDR11
+clock0 => ram_block1a0.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+
+
+|Train|Tcontrol:CONTROL
+reset => state~3.DATAIN
+clock => state~1.DATAIN
+sensor1 => Mux0.IN4
+sensor1 => Mux1.IN4
+sensor1 => Selector1.IN6
+sensor1 => Mux4.IN4
+sensor1 => Mux5.IN4
+sensor2 => Mux2.IN4
+sensor2 => Mux3.IN4
+sensor2 => Mux0.IN5
+sensor2 => Mux1.IN5
+sensor3 => Mux4.IN5
+sensor3 => Mux5.IN5
+sensor3 => Selector0.IN6
+sensor3 => Selector1.IN7
+sensor3 => Selector3.IN2
+sensor4 => Mux2.IN5
+sensor4 => Mux3.IN5
+sensor4 => Selector0.IN7
+sensor4 => Selector2.IN7
+sensor4 => Selector4.IN2
+entry_A <= entry_A.DB_MAX_OUTPUT_PORT_TYPE
+entry_B <= entry_B.DB_MAX_OUTPUT_PORT_TYPE
+switch3 <= <GND>
+dirA[0] <= dirA[0].DB_MAX_OUTPUT_PORT_TYPE
+dirA[1] <= <GND>
+dirB[0] <= dirB[0].DB_MAX_OUTPUT_PORT_TYPE
+dirB[1] <= <GND>
+
+
