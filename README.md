@@ -14,13 +14,13 @@ This project was initially done in 2018 and is just being migrated to this repo.
 * TrackX select power source A=0 or B=1 for track segment.
 * DirX selects direction: 00-stop  01-counterclockwise  10-clockwise.
 * Note: Screen blinks when trains crash or go through switch in wrong direction.
-*      **-----------Sw3--------------**
-*      **| T1         \T4        T1 |**
-*      **|     -------|-------      |**
-*      **|     | T3   |   T3 |      |**
-*      **|     |      | S5   |      |**
-*   **S1 |   S2|             | S3   | S4**
-*      **|     \     T2      /      |**
-*      **------Sw1---------Sw2-------**
+* **xxxxxxxxxxxxSw3xxxxxxxxxxxxx**
+* **x T1         xT4        T1 x**
+* **x     xxxxxxx!xxxxxxx      x**
+* **x     x T3   x   T3 x      x**
+* **x     x      x S5   x      x**
+***S1 x   S2x             x S3   x S4**
+* **x     \     T2      /      x**
+* **xxxxxxSw1xxxxxxxxxxSw2xxxxxx**
 
 *                     Track Layout.
